@@ -1,0 +1,15 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "1022",
+  "database": "test",
+  "entities": ["bin/**/**.entity{.ts,.js}"],
+  "connectTimeout": 3600000,
+  "connectionLimit" : 1000,
+  "logging": true,
+  "timeout": 3600000,
+  "aquireTimeout": 3600000,
+  "synchronize": true
+}

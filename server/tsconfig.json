@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "lib": ["dom", "es5", "es2015", "esnext.asynciterable"],
+      "emitDecoratorMetadata": true,
+      "target": "es5",
+      "experimentalDecorators": true,
+      "module": "commonjs",
+      "moduleResolution":"node",
+      "allowJs": true,
+      "sourceMap": false,
+      "jsx": "preserve",
+      "removeComments": true,
+      "outDir": "../bin",
+      "allowSyntheticDefaultImports": true
+    },
+    "exclude": [
+      "node_modules"
+    ],
+    "include": [
+      "../server"
+    ]
+}

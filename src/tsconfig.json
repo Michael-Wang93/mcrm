@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "lib": ["dom", "es5", "es2015"],
+      "target": "es5",
+      "module": "commonjs",
+      "experimentalDecorators": true,
+      "allowJs": true,
+      "sourceMap": true,
+      "jsx": "preserve",
+      "removeComments": true,
+      "allowSyntheticDefaultImports": true
+    },
+    "include": [
+      "../src"
+    ]
+}
