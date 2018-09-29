@@ -65,7 +65,7 @@ let routes = [
   {
     "path": "/",
     "component": dynamic({ loader: () => import('../../layouts/BasicLayout'), loading: require('/Users/michael/web/code/mcrm/src/components/PageLoading/index').default  }),
-    "Routes": [require('../../pages/Authorized').default],
+    "Routes": [require('../Authorized').default],
     "authority": [
       "admin",
       "user"

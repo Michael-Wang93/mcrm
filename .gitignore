@@ -17,11 +17,15 @@ npm-debug.log
 /coverage
 /.nyc_output
 
-# dist
 /dist
-
-# bin
 /bin
-
-# bin
 /src/dist
+/src/node_modules
+# umi
+.umi
+.umi-production
+**/.umi
+
+# dependencies
+**/node_modules
+/src/node_modules
