@@ -7,7 +7,7 @@ import path from 'path';
 export default config => {
   // 将所有 less 合并为一个供 themePlugin使用
   const outFile = path.join(__dirname, '../.temp/ant-design-pro.less');
-  const stylesDir = path.join(__dirname, '../src/');
+  const stylesDir = path.join(__dirname, '../');
 
   config.plugin('merge-less').use(MergeLessPlugin, [
     {
@@ -18,9 +18,9 @@ export default config => {
 
   // config.plugin('ant-design-theme').use(AntDesignThemePlugin, [
   //   {
-  //     antDir: path.join(__dirname, '../node_modules/antd'),
+  //     antDir: path.join(__dirname, '../../node_modules/antd'),
   //     stylesDir,
-  //     varFile: path.join(__dirname, '../node_modules/antd/lib/style/themes/default.less'),
+  //     varFile: path.join(__dirname, '../../node_modules/antd/lib/style/themes/default.less'),
   //     mainLessFile: outFile, //     themeVariables: ['@primary-color'],
   //     indexFileName: 'index.html',
   //   },
