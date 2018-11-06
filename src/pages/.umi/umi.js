@@ -9,12 +9,10 @@ import ReactDOM from 'react-dom';
 // runtime plugins
 window.g_plugins = require('umi/_runtimePlugin');
 window.g_plugins.init({
-  validKeys: ['patchRoutes','render','rootContainer','dva',],
+  validKeys: ['patchRoutes','render','rootContainer',],
 });
-window.g_plugins.use(require('../../../node_modules/umi-plugin-dva/lib/runtime'));
-window.g_plugins.use(require('@/app'));
 
-require('@tmp/initDva');
+
 
 // render
 let oldRender = () => {

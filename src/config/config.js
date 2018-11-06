@@ -11,9 +11,6 @@ export default {
       'umi-plugin-react',
       {
         antd: true,
-        dva: {
-          hmr: true,
-        },
         locale: {
           enable: true, // default false
           default: 'zh-CN', // default zh-CN
@@ -26,7 +23,6 @@ export default {
         ...(!process.env.TEST && os.platform() === 'darwin'
           ? {
               dll: {
-                include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
                 exclude: ['@babel/runtime'],
               },
               hardSource: true,
@@ -34,6 +30,7 @@ export default {
           : {}),
       },
     ],
+    ['umi-plugin-apollo'],
     [
       'umi-plugin-ga',
       {
