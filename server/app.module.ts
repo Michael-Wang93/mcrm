@@ -15,31 +15,31 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [TypeOrmModule.forRoot(), SubscriptionsModule.forRoot(), UsersModule, CatsModule, GraphQLModule],
 })
-  export class ApplicationModule implements NestModule {
-    constructor(
-      private readonly subscriptionsModule: SubscriptionsModule,
-      private readonly graphQLFactory: GraphQLFactory,
-    ) { }
+export class ApplicationModule implements NestModule {
+  constructor(
+    private readonly subscriptionsModule: SubscriptionsModule,
+    private readonly graphQLFactory: GraphQLFactory,
+  ) { }
 
-    configure(consumer: MiddlewareConsumer) {
-      const schema = this.createSchema();
-      this.subscriptionsModule.createSubscriptionServer(schema);
+  configure(consumer: MiddlewareConsumer) {
+    const schema = this.createSchema();
+    this.subscriptionsModule.createSubscriptionServer(schema);
 
-      consumer
-        .apply(
+    consumer
+      .apply(
         graphiqlExpress({
           endpointURL: '/graphql',
           subscriptionsEndpoint: `ws://localhost:3001/subscriptions`,
         }),
       )
-        .forRoutes({ path: '/graphiql', method: RequestMethod.GET })
-        .apply(graphqlExpress(req => ({ schema, rootValue: req })))
-        .forRoutes({ path: '/graphql', method: RequestMethod.ALL });
-    }
-
-    createSchema() {
-      const typeDefs = this.graphQLFactory.mergeTypesByPaths('./**/*.graphql');
-      const schema = this.graphQLFactory.createSchema({ typeDefs });
-      return schema;
-    }
+      .forRoutes({ path: '/graphiql', method: RequestMethod.GET })
+      .apply(graphqlExpress(req => ({ schema, rootValue: req })))
+      .forRoutes({ path: '/graphql', method: RequestMethod.ALL });
   }
+
+  createSchema() {
+    const typeDefs = this.graphQLFactory.mergeTypesByPaths('./**/*.graphql');
+    const schema = this.graphQLFactory.createSchema({ typeDefs });
+    return schema;
+  }
+}

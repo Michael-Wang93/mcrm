@@ -1,4 +1,4 @@
-import { Component, forwardRef, Inject } from '@nestjs/common';
+import { Injectable, forwardRef, Inject } from '@nestjs/common';
 import { Cat } from '../cats/interfaces/cat.interface';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -6,7 +6,7 @@ import { UserEntity } from './users.entity';
 import { CatsService } from '../cats/cats.service';
 import { CatEntity } from '../cats/cats.entity';
 
-@Component()
+@Injectable()
 export class UsersService {
 
   constructor(

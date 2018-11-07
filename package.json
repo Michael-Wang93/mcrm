@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start-sever": "tsc --project ./server && node ./bin/index.js",
-    "start-web": "cd src && cross-env APP_TYPE=site umi dev",
+    "start-web": "cd web && yarn start",
     "prestart:prod": "tsc",
     "start:prod": "node dist/main.js"
   },
@@ -61,8 +61,8 @@
     "@types/minimist": "^1.2.0",
     "@types/node": "10.1.4",
     "@types/node-fetch": "^2.1.2",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.6",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
     "@types/reflect-metadata": "^0.1.0",
     "antd": "^3.9.2",
     "apollo-boost": "^0.1.16",
@@ -72,6 +72,7 @@
     "bizcharts": "^3.2.2",
     "bizcharts-plugin-slider": "^2.0.3",
     "classnames": "^2.2.6",
+    "cors": "^2.8.5",
     "dva": "^2.4.0",
     "enquire-js": "^0.2.1",
     "express": "^4.16.3",
